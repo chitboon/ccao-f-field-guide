@@ -102,16 +102,17 @@
 
   ol.steps{list-style:none;counter-reset:s;padding:0;margin:0;display:flex;
     flex-direction:column;gap:.7rem}
-  ol.steps li{counter-increment:s;display:grid;grid-template-columns:1.55rem 1fr;
-    gap:.7rem;font-size:.96rem}
-  ol.steps li::before{content:counter(s);font-family:var(--mono);font-size:.7rem;
+  ol.steps li{counter-increment:s;position:relative;padding-left:2.25rem;
+    font-size:.96rem}
+  ol.steps li::before{content:counter(s);position:absolute;left:0;top:.08rem;
+    width:1.55rem;font-family:var(--mono);font-size:.7rem;
     color:var(--accent);border:1px solid var(--rule);border-radius:2px;height:1.45rem;
-    display:grid;place-items:center;margin-top:.08rem}
+    display:grid;place-items:center}
 
   ul.plain{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:.55rem}
-  ul.plain li{display:grid;grid-template-columns:.9rem 1fr;gap:.65rem;font-size:.96rem}
-  ul.plain li::before{content:"";width:.4rem;height:.4rem;border-radius:50%;
-    background:var(--accent);margin-top:.58rem}
+  ul.plain li{position:relative;padding-left:1.55rem;font-size:.96rem}
+  ul.plain li::before{content:"";position:absolute;left:.25rem;top:.58rem;
+    width:.4rem;height:.4rem;border-radius:50%;background:var(--accent)}
 
   code{font-family:var(--mono);font-size:.86em;background:var(--sunk);
     padding:.1em .35em;border-radius:2px}
