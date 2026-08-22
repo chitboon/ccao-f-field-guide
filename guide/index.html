@@ -1,0 +1,1069 @@
+<title>CCAO-F Field Guide</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,500;6..72,600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+  :root{
+    --ground:#FAF9F6; --surface:#FFFFFF; --surface-2:#F1F0EB; --sunk:#EDECE6;
+    --ink:#1C2028; --ink-mid:#4A515C; --ink-soft:#6E7681;
+    --accent:#1F6F8B;
+    --d1:#1F6F8B; --d2:#8A5A2B; --d3:#6B3A7A; --d4:#2C6B4F;
+    --good:#2C6B4F; --good-bg:#EAF1EC; --warn:#9C4A1A; --warn-bg:#F8EDE6;
+    --rule:#DEDCD4; --rule-soft:#E9E7E0;
+    --serif:'Newsreader',Georgia,serif;
+    --sans:'IBM Plex Sans',system-ui,-apple-system,sans-serif;
+    --mono:'IBM Plex Mono',ui-monospace,Menlo,monospace;
+  }
+  @media (prefers-color-scheme:dark){
+    :root:not([data-theme="light"]){
+      --ground:#14171C; --surface:#1B1F26; --surface-2:#22272F; --sunk:#191D23;
+      --ink:#E8EAED; --ink-mid:#B0B7C0; --ink-soft:#868D96;
+      --accent:#6FBDD6;
+      --d1:#6FBDD6; --d2:#D3A263; --d3:#B98DC7; --d4:#6FB894;
+      --good:#6FB894; --good-bg:#182420; --warn:#DA9463; --warn-bg:#2A1E16;
+      --rule:#2B313A; --rule-soft:#232931;
+    }
+  }
+  :root[data-theme="dark"]{
+    --ground:#14171C; --surface:#1B1F26; --surface-2:#22272F; --sunk:#191D23;
+    --ink:#E8EAED; --ink-mid:#B0B7C0; --ink-soft:#868D96;
+    --accent:#6FBDD6;
+    --d1:#6FBDD6; --d2:#D3A263; --d3:#B98DC7; --d4:#6FB894;
+    --good:#6FB894; --good-bg:#182420; --warn:#DA9463; --warn-bg:#2A1E16;
+    --rule:#2B313A; --rule-soft:#232931;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--ground);color:var(--ink);font-family:var(--sans);
+    font-size:16.5px;line-height:1.62;-webkit-text-size-adjust:100%}
+  .wrap{max-width:42rem;margin:0 auto;padding:2rem 1.15rem 5rem}
+  @media(min-width:680px){body{font-size:17px}.wrap{padding:3.5rem 2rem 6rem}}
+
+  .kicker{font-family:var(--mono);font-size:.66rem;letter-spacing:.15em;
+    text-transform:uppercase;color:var(--accent);margin:0 0 .55rem}
+  h1{font-family:var(--serif);font-weight:600;font-size:2.35rem;line-height:1.08;
+    letter-spacing:-.02em;margin:0 0 .7rem;text-wrap:balance}
+  @media(min-width:680px){h1{font-size:3rem}}
+  .standfirst{font-size:1.08rem;color:var(--ink-mid);margin:0}
+  .masthead{border-bottom:2px solid var(--ink);padding-bottom:1.7rem;margin-bottom:1.6rem}
+
+  h2{font-family:var(--serif);font-weight:600;font-size:1.6rem;line-height:1.15;
+    letter-spacing:-.014em;margin:0 0 .3rem;text-wrap:balance}
+  h3{font-family:var(--sans);font-weight:600;font-size:1.02rem;
+    margin:0 0 .35rem;letter-spacing:-.004em}
+  section{margin:3rem 0 0;padding-top:1.7rem;border-top:1px solid var(--rule)}
+  .lede{color:var(--ink-mid);margin:.55rem 0 1.4rem}
+  p{margin:0 0 1rem}
+  a{color:var(--accent)}
+
+  .callout{background:var(--surface);border:1px solid var(--rule);
+    border-left:4px solid var(--accent);border-radius:2px;padding:1.05rem 1.1rem;margin:1.5rem 0}
+  .callout p:last-child{margin-bottom:0}
+  .callout .kicker{margin-bottom:.4rem}
+  .callout.warn{border-left-color:var(--warn);background:var(--warn-bg)}
+  .callout.warn .kicker{color:var(--warn)}
+
+  /* 4D cards */
+  .dgrid{display:flex;flex-direction:column;gap:.9rem;margin:1.3rem 0}
+  .dcard{background:var(--surface);border:1px solid var(--rule);border-radius:3px;
+    padding:1rem 1.05rem;border-top:3px solid var(--c)}
+  .dcard .dname{font-family:var(--serif);font-weight:600;font-size:1.22rem;
+    margin:0 0 .15rem;color:var(--c)}
+  .dcard .dverb{font-family:var(--mono);font-size:.66rem;letter-spacing:.12em;
+    text-transform:uppercase;color:var(--ink-soft);margin:0 0 .5rem}
+  .dcard p{margin:0 0 .6rem;font-size:.96rem}
+  .subs{display:flex;flex-wrap:wrap;gap:.35rem;margin:0;padding:0;list-style:none}
+  .subs li{font-family:var(--mono);font-size:.7rem;background:var(--surface-2);
+    border:1px solid var(--rule-soft);border-radius:2px;padding:.2rem .45rem;color:var(--ink-mid)}
+
+  /* tables */
+  .tw{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:0 0 .6rem}
+  table{border-collapse:collapse;width:100%;font-size:.9rem;min-width:20rem}
+  th,td{text-align:left;padding:.5rem .6rem;border-bottom:1px solid var(--rule-soft);vertical-align:top}
+  th{font-family:var(--mono);font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;
+    color:var(--ink-soft);font-weight:500;border-bottom:1px solid var(--rule)}
+  td:first-child{font-weight:500}
+  tr:last-child td{border-bottom:none}
+  .num{font-variant-numeric:tabular-nums;white-space:nowrap}
+  .flag{font-family:var(--mono);font-size:.68rem;color:var(--warn)}
+
+  /* practice items */
+  details{background:var(--surface);border:1px solid var(--rule);border-radius:3px;
+    padding:.9rem 1rem;margin:0 0 .7rem}
+  details[open]{background:var(--surface-2)}
+  summary{cursor:pointer;font-weight:500;list-style:none;font-size:.98rem}
+  summary::-webkit-details-marker{display:none}
+  summary::before{content:"▸ ";color:var(--accent);font-weight:600}
+  details[open] summary::before{content:"▾ "}
+  summary:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:2px}
+  .opts{list-style:upper-alpha;margin:.8rem 0 0;padding-left:1.5rem;font-size:.94rem}
+  .opts li{margin-bottom:.3rem}
+  .ans{margin:.9rem 0 0;padding-top:.8rem;border-top:1px solid var(--rule);font-size:.94rem}
+  .ans strong{color:var(--good)}
+
+  ol.steps{list-style:none;counter-reset:s;padding:0;margin:0;display:flex;
+    flex-direction:column;gap:.7rem}
+  ol.steps li{counter-increment:s;display:grid;grid-template-columns:1.55rem 1fr;
+    gap:.7rem;font-size:.96rem}
+  ol.steps li::before{content:counter(s);font-family:var(--mono);font-size:.7rem;
+    color:var(--accent);border:1px solid var(--rule);border-radius:2px;height:1.45rem;
+    display:grid;place-items:center;margin-top:.08rem}
+
+  ul.plain{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:.55rem}
+  ul.plain li{display:grid;grid-template-columns:.9rem 1fr;gap:.65rem;font-size:.96rem}
+  ul.plain li::before{content:"";width:.4rem;height:.4rem;border-radius:50%;
+    background:var(--accent);margin-top:.58rem}
+
+  code{font-family:var(--mono);font-size:.86em;background:var(--sunk);
+    padding:.1em .35em;border-radius:2px}
+  .foot{margin-top:3rem;padding-top:1.6rem;border-top:2px solid var(--ink);
+    font-size:.93rem;color:var(--ink-soft)}
+</style>
+
+<div class="wrap">
+
+<header class="masthead">
+  <p class="kicker">Claude Certified Associate · Foundations · CCAO-F</p>
+  <h1>Field Guide</h1>
+  <p class="standfirst">Built backwards from a real objective-level breakdown. Most guides restate the blueprint. This one tells you which objectives actually get sampled, covers an item type that appears on roughly a sixth of the paper and almost nowhere in the literature, and names where confident preparation still leaves you exposed.</p>
+</header>
+
+<div class="callout">
+  <p class="kicker">What makes this different</p>
+  <p>Everything here is calibrated against the objective-by-objective breakdown from one passing sitting, then grounded in the lesson material of four Anthropic courses rather than in help-centre articles. That breakdown showed something useful and slightly humbling: <strong>the objectives that scored lowest were the ones prepared hardest.</strong> Several sections below exist purely to close gaps that heavy, confident preparation still missed.</p>
+</div>
+
+<section>
+  <p class="kicker">Verified</p>
+  <h2>The facts</h2>
+  <div class="tw"><table>
+    <tbody>
+      <tr><td>Items</td><td class="num">60, multiple-choice and multiple-response</td></tr>
+      <tr><td>Time</td><td class="num">120 minutes (~2:00 per item)</td></tr>
+      <tr><td>Passing score</td><td class="num">720 on a 100–1000 scale</td></tr>
+      <tr><td>Fee</td><td class="num">$99 USD</td></tr>
+      <tr><td>Validity</td><td class="num">12 months</td></tr>
+      <tr><td>Retakes</td><td class="num">14 / 30 / 90-day waits · max 4 per 12 months</td></tr>
+      <tr><td>Reschedule</td><td class="num">Free until 24 hours before</td></tr>
+    </tbody>
+  </table></div>
+  <p style="font-size:.94rem;color:var(--ink-mid);margin:.9rem 0 0">Multi-response items state how many to select and score <strong>all-or-nothing</strong>. Expect six to eight of them. The score report breaks results down by <em>individual objective</em>, not by domain — which is why objective-level preparation beats domain-level preparation.</p>
+</section>
+
+<section>
+  <p class="kicker">Weighting</p>
+  <h2>Seven domains, twenty-seven objectives</h2>
+  <p class="lede">Domain weights are published. What is not published is that a 60-item form spreads across roughly 27 objectives — about two items each. That has a direct consequence: a single objective you have never thought about costs you two items, and there is no way to make it up inside the same domain.</p>
+  <div class="tw"><table>
+    <thead><tr><th>Domain</th><th>Weight</th><th>Items</th></tr></thead>
+    <tbody>
+      <tr><td>Prompting &amp; Task Execution</td><td class="num">14%</td><td class="num">~8</td></tr>
+      <tr><td>Output Evaluation &amp; Validation</td><td class="num">21%</td><td class="num">~13</td></tr>
+      <tr><td>Product &amp; Model Selection</td><td class="num">12%</td><td class="num">~7</td></tr>
+      <tr><td>Workflow Integration &amp; Solution Design</td><td class="num">16%</td><td class="num">~10</td></tr>
+      <tr><td>Configuration &amp; Knowledge Management</td><td class="num">12%</td><td class="num">~7</td></tr>
+      <tr><td>Governance, Risk &amp; Responsible Use</td><td class="num">15%</td><td class="num">~9</td></tr>
+      <tr><td>Troubleshooting &amp; Optimization</td><td class="num">10%</td><td class="num">~6</td></tr>
+    </tbody>
+  </table></div>
+  <p style="font-size:.94rem;color:var(--ink-mid);margin:.9rem 0 0">On the sitting this guide is built from, three blueprint objectives drew <em>no</em> items at all — research-and-planning workflows, following organisational AI policy, and audience adaptation. Do not read that as permission to skip them. Forms vary, and the absence tells you the sampling is genuinely partial, not that those objectives are cold.</p>
+</section>
+
+<section>
+  <p class="kicker">Under-documented and tested</p>
+  <h2>The 4D Framework</h2>
+  <p class="lede">This comes from Anthropic's own <em>AI Fluency: Framework &amp; Foundations</em> course, and it does appear on the exam — typically as an item giving four options and asking which is most descriptive of one of the Ds. Almost no CCAO-F guide covers it, because the course lesson bodies sit behind enrolment. The structure below is from the public course page.</p>
+
+  <div class="dgrid">
+    <div class="dcard" style="--c:var(--d1)">
+      <p class="dname">Delegation</p>
+      <p class="dverb">Deciding · effectiveness</p>
+      <p>Deciding deliberately which parts of the work go to AI and which you keep for yourself. Happens <em>before</em> any prompt is written. Its three components are ordered — you understand the problem, then the tool, then divide the work.</p>
+      <ul class="subs">
+        <li>Problem Awareness — grasping the goal, and what the work actually involves</li>
+        <li>Platform Awareness — knowing the capabilities of the systems available to you</li>
+        <li>Task Delegation — splitting the work between you and the system, deliberately</li>
+      </ul>
+    </div>
+    <div class="dcard" style="--c:var(--d2)">
+      <p class="dname">Description</p>
+      <p class="dverb">Communicating · effectiveness</p>
+      <p>Communicating with AI clearly enough that it can act on what you actually meant. More than writing prompts — Academy stresses that these systems behave like collaborators you talk to, not lookup tables you query.</p>
+      <ul class="subs">
+        <li>Product — what you want created</li>
+        <li>Process — how it should approach the request</li>
+        <li>Performance — how it should behave with you</li>
+      </ul>
+    </div>
+    <div class="dcard" style="--c:var(--d3)">
+      <p class="dname">Discernment</p>
+      <p class="dverb">Evaluating · effectiveness</p>
+      <p>Assessing what AI produces, and how it went about producing it, with a critical eye. Academy presents it as the mirror image of Description — the three types map onto the three Descriptions exactly.</p>
+      <ul class="subs">
+        <li>Product — quality of the output</li>
+        <li>Process — how it arrived there</li>
+        <li>Performance — how it behaved in the interaction</li>
+      </ul>
+    </div>
+    <div class="dcard" style="--c:var(--d4)">
+      <p class="dname">Diligence</p>
+      <p class="dverb">Taking responsibility · ethics and safety</p>
+      <p>Engaging with AI responsibly. Academy draws a sharp line here: the other three competencies address <strong>effectiveness and efficiency</strong>, while Diligence addresses <strong>ethics and safety</strong>.</p>
+      <ul class="subs">
+        <li>Creation — choosing which tools to use for a piece of work, and on what terms</li>
+        <li>Transparency — declaring where AI contributed and what it did</li>
+        <li>Deployment — owning, verifying and vouching for what you share</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="callout warn">
+    <p class="kicker">Two definitions worth getting exactly right</p>
+    <p><strong>Creation Diligence is about tool choice, not craftsmanship.</strong> It covers which AI system you selected, what data you shared with it, and the privacy, security and ethical considerations in that choice. It is not "being careful while making the thing" — that reading is wrong and it is the natural misreading.</p>
+    <p style="margin-bottom:0"><strong>Verification lives in Deployment Diligence.</strong> Academy defines it as taking responsibility for the outputs you use or pass on — checking them, and then standing behind them. So checking a claim before circulating a document is Deployment Diligence — even though evaluating that same claim mid-draft would be Product Discernment. The discriminator is whether you are <em>assessing</em> or <em>vouching</em>.</p>
+  </div>
+
+  <div class="callout">
+    <p class="kicker">The Description–Discernment loop · four named steps</p>
+    <p>Academy gives this loop an explicit four-step form, and it is the single most likely source of any ordering item built on the framework:</p>
+    <ol class="steps" style="margin:.8rem 0">
+      <li><strong>Describe</strong> — state Product, Process and Performance</li>
+      <li><strong>Discern</strong> — evaluate the output, the approach, and the behaviour</li>
+      <li><strong>Refine</strong> — feed back, clarify or adjust the description, iterate</li>
+      <li><strong>Integrate</strong> — add your own expertise, decide what to keep, and take responsibility for the final output</li>
+    </ol>
+    <p style="margin-bottom:0">Note what step 4 is doing. <em>Integrate</em> is where the loop hands off to Diligence: you decide what survives, what gets changed, what gets discarded, and you own the result. Most guides stop the loop at Refine, which misses the step that actually closes it.</p>
+  </div>
+
+  <div class="callout">
+    <p class="kicker">The five-step sequence, now sourced</p>
+    <p>Put Delegation in front of the loop and you have a complete five-step task cycle, entirely from official material:</p>
+    <p style="font-family:var(--mono);font-size:.86rem;margin:.7rem 0"><strong>Delegate → Describe → Discern → Refine → Integrate</strong></p>
+    <p style="margin-bottom:0">Academy also gives a five-step <em>project planning</em> sequence in the Delegation lesson: choose the project, establish the vision and what success looks like, identify the major tasks, analyse each task for human versus AI strengths, then create the plan. Both are five steps, both are official, and both run understand → specify → produce → evaluate → own.</p>
+  </div>
+
+  <div class="callout warn">
+    <p class="kicker">How these items work</p>
+    <p>In an item asking which option best describes one of the Ds, the three wrong options are typically accurate descriptions of the <em>other three</em>. So there is nothing to reason out — you either know which D owns which verb or you guess. Memorise four verbs: <strong>Delegation decides. Description communicates. Discernment evaluates. Diligence takes responsibility.</strong></p>
+  </div>
+
+  <h3 style="margin-top:1.8rem">Practice</h3>
+  <details>
+    <summary>Which best describes Delegation in the 4D framework?</summary>
+    <ol class="opts">
+      <li>Communicating requirements to the AI clearly enough to act on.</li>
+      <li>Deciding which parts of a task to assign to AI, informed by awareness of the problem and of the platform.</li>
+      <li>Critically evaluating the AI's output before relying on it.</li>
+      <li>Taking responsibility for how AI-assisted work is created, disclosed, and deployed.</li>
+    </ol>
+    <p class="ans"><strong>B.</strong> A is Description, C is Discernment, D is Diligence. Note the shape: every distractor is a correct definition of a different D. Delegation's two awareness components are the tell — problem awareness and platform awareness both precede the work.</p>
+  </details>
+  <details>
+    <summary>Performance Description refers to which of the following?</summary>
+    <ol class="opts">
+      <li>Specifying the output you want the AI to produce.</li>
+      <li>Specifying the method or steps the AI should follow.</li>
+      <li>Specifying how the AI should behave, its role and manner.</li>
+      <li>Specifying how the output will be measured after delivery.</li>
+    </ol>
+    <p class="ans"><strong>C.</strong> The three Descriptions map cleanly: Product is <em>what</em>, Process is <em>how it works</em>, Performance is <em>how it behaves</em>. D is plausible-sounding but describes evaluation, which belongs to Discernment.</p>
+  </details>
+  <details>
+    <summary>An associate reviews a draft, identifies that it buries the recommendation, and rewrites the prompt to lead with the decision. Which part of the framework does this illustrate?</summary>
+    <ol class="opts">
+      <li>Task Delegation, since the associate is reassigning work.</li>
+      <li>The Description–Discernment loop, since evaluation is feeding a revised description.</li>
+      <li>Creation Diligence, since the associate is improving the artefact.</li>
+      <li>Platform Awareness, since the associate is working within the tool's limits.</li>
+    </ol>
+    <p class="ans"><strong>B.</strong> This is the loop by definition — discernment producing a better description. The trap is C, because "improving the work" sounds like diligence; Creation Diligence is about taking responsibility for how work is produced, not about the iteration mechanic itself.</p>
+  </details>
+  <details>
+    <summary>Which is the clearest example of Transparency Diligence?</summary>
+    <ol class="opts">
+      <li>Checking a cited statistic against its source before the report goes out.</li>
+      <li>Telling a client, when asked, that AI assisted in preparing their deliverable.</li>
+      <li>Choosing an approved enterprise tool over a personal account for client data.</li>
+      <li>Deciding a task needs human expertise and keeping it in-house.</li>
+    </ol>
+    <p class="ans"><strong>B.</strong> Transparency is specifically disclosure — being open about AI's role with those who need to know. Each distractor is a correctly-named different component: A is <em>Deployment</em> Diligence (verifying and vouching for what you share), C is <em>Creation</em> Diligence (which system you choose and what you share with it), D is Task Delegation. All four are good practice; only one is transparency.</p>
+  </details>
+
+  <details>
+    <summary>Which of these is the named artefact Academy uses to practise Transparency Diligence?</summary>
+    <ol class="opts">
+      <li>An audit log of every prompt used in producing the work.</li>
+      <li>A diligence statement acknowledging AI's role and affirming your responsibility for the output.</li>
+      <li>A model card describing the system's training and limitations.</li>
+      <li>A disclosure notice naming the model version and tier used.</li>
+    </ol>
+    <p class="ans"><strong>B.</strong> Academy's <em>diligence statement</em> combines the disclosure with the affirmation — it states which systems assisted and with what tasks, confirms the output was reviewed, and asserts that the content, its accuracy and the way it is presented remain your responsibility. Note it does both jobs at once: transparency about the role, and ownership of the result.</p>
+  </details>
+  <details>
+    <summary>Which pairing correctly matches a D to its scope?</summary>
+    <ol class="opts">
+      <li>Discernment covers only the accuracy of the final output.</li>
+      <li>Diligence applies only once work is published externally.</li>
+      <li>Discernment covers the output, the process, and the AI's behaviour.</li>
+      <li>Delegation covers the wording of the request to the AI.</li>
+    </ol>
+    <p class="ans"><strong>C.</strong> Discernment mirrors Description across all three dimensions — that symmetry is deliberate. A under-scopes it to Product Discernment alone, B under-scopes Diligence to Deployment alone, and D describes Description.</p>
+  </details>
+</section>
+
+<section>
+  <p class="kicker">Where preparation fails</p>
+  <h2>Three gaps confident study still leaves</h2>
+  <p class="lede">On the sitting behind this guide, these three objectives were the weakest on the whole report — while closely related objectives in the same domains came back perfect. In each case the cause was the same: the study material taught one half of a two-part objective, and the candidate never noticed the other half existed.</p>
+
+  <h3 style="margin-top:1.7rem">Gap 1 · Organising information is not the same as choosing a format</h3>
+  <p>This objective has two clauses: organising and curating the information that goes in, <em>and</em> choosing the format that comes out. Most preparation covers the second exhaustively and never touches the first. The curation half turns out to be well documented — it is just documented under Projects rather than under output formats, which is why it gets missed.</p>
+  <div class="callout">
+    <p class="kicker">Curation, from Claude 101</p>
+    <p>Four practices the course sets out:</p>
+    <ul class="plain" style="margin:.7rem 0">
+      <li><strong>Start narrow, then widen.</strong> One project per line of work beats one project for everything.</li>
+      <li><strong>Keep the knowledge base current.</strong> Stale documents produce stale answers. Review periodically.</li>
+      <li><strong>Name documents descriptively</strong> — <code>2026-Q2-Supplier-Scorecard.xlsx</code>, not <code>data.xlsx</code> — and keep related files together. Both the name of a file and the company it keeps are signals about how documents relate to one another.</li>
+      <li><strong>Reference documents by name</strong> in the prompt to focus retrieval: "Using the Q3 pricing sheet, which segments moved most on discount?"</li>
+    </ul>
+    <p style="margin-bottom:0">That third one is the non-obvious one and the most testable: <strong>filenames and file grouping are inputs to Claude's retrieval, not just housekeeping.</strong> Curation means shaping what Claude can find, not only what you include.</p>
+  </div>
+  <p style="margin-top:1.3rem">For the format half, there are <strong>four</strong> answers, not two — and Claude 101 draws the boundary explicitly. Office formats and PDFs are handled by a distinct file-creation capability, <strong>not by artifacts</strong>.</p>
+  <div class="tw"><table>
+    <thead><tr><th>Deliverable</th><th>Format</th></tr></thead>
+    <tbody>
+      <tr><td>Short answer or clarification</td><td>Inline</td></tr>
+      <tr><td>Substantial, iterated, reused</td><td>Artifact</td></tr>
+      <tr><td>Records bound for another system</td><td>Structured data</td></tr>
+      <tr><td>Opened in Excel, Word, or a PDF reader</td><td>Generated file via code execution</td></tr>
+    </tbody>
+  </table></div>
+  <p style="font-size:.94rem;color:var(--ink-mid)"><strong>An artifact containing a table is not a spreadsheet.</strong> If the recipient will pivot the data, the answer is a generated file.</p>
+  <div class="tw" style="margin-top:1rem"><table>
+    <thead><tr><th>Artifact triggers · Claude 101</th><th>Artifact types · six named</th></tr></thead>
+    <tbody>
+      <tr><td>Substantial and self-contained — the course’s rough threshold is upwards of fifteen lines</td><td>Documents (markdown, plain text)</td></tr>
+      <tr><td>Likely to be edited, iterated on, or reused</td><td>Code snippets</td></tr>
+      <tr><td>Stands alone without the surrounding conversation</td><td>HTML pages</td></tr>
+      <tr><td>Content you will reference or use later</td><td>SVG images · Mermaid diagrams · React components</td></tr>
+    </tbody>
+  </table></div>
+  <p style="font-size:.94rem;color:var(--ink-mid);margin:.9rem 0 0">Publishing differs by plan and is worth knowing: Free, Pro and Max can <strong>publish publicly</strong> — reachable by anyone with the link, no Claude account required, not indexed by search engines, and it is only the version you pick that goes out, with the conversation itself staying private. Team and Enterprise <strong>share internally</strong> with authentication instead.</p>
+
+  <h3 style="margin-top:1.7rem">Gap 2 · Writing standing instructions is authoring, not sorting</h3>
+  <p>Nearly all preparation on this objective teaches <em>classification</em> — what belongs in instructions versus knowledge sources, and at which scope. That is a different objective — the one about standing a Project up with its instructions and its knowledge sources — and that one is usually the one that comes back clean. The verb here is <strong>create</strong>. Expect to judge whether a given instruction is <em>well written</em>.</p>
+  <div class="callout">
+    <p class="kicker">The four components · Claude 101</p>
+    <p>Claude 101 lists four things good project instructions typically include. This is the canonical answer set for the objective:</p>
+    <div class="tw" style="margin-top:.7rem"><table>
+      <thead><tr><th>Component</th><th>Example — written for this guide, not the course’s</th></tr></thead>
+      <tbody>
+        <tr><td>Context</td><td>"This project produces supplier evaluation summaries for the procurement team"</td></tr>
+        <tr><td>Process</td><td>"Establish the evaluation criteria first, then score each supplier against them"</td></tr>
+        <tr><td>Tone and style</td><td>"Plain, direct language. Assume the reader is not a procurement specialist"</td></tr>
+        <tr><td>Specific requirements</td><td>"Close every summary with a recommendation and the single biggest risk"</td></tr>
+      </tbody>
+    </table></div>
+    <p style="margin-bottom:0">Note the mapping: Process is <em>Process Description</em>, tone and style is <em>Performance Description</em>, specific requirements is <em>Product Description</em>. The instruction panel is the 4D Description competency at the "lasting" end of the spectrum.</p>
+  </div>
+
+  <div class="callout warn">
+    <p class="kicker">Instructions can encode conditional workflows</p>
+    <p style="margin-bottom:0">This is the part that overturns the simple "concise durable rules" model. Claude 101 explicitly endorses using project instructions to <strong>automate a workflow</strong>, with a trigger and a response — the example it gives is a standing rule that turns any uploaded transcript into a summary on a fixed template. It frames instructions as <strong>programming the project’s behaviour</strong>. So a when-this-then-that rule is legitimate and intended. Concision still matters, but the reason to reject a long instruction is that it is vague or unfalsifiable, not that it contains a conditional.</p>
+  </div>
+
+  <ul class="plain" style="margin-top:1.2rem">
+    <li>Specific and checkable. Vague direction produces inconsistent output — "be professional" is not an instruction, "under 150 words, no jargon, lead with the recommendation" is.</li>
+    <li>Behaviour, not content. Reference documents belong in knowledge, not instructions.</li>
+    <li>Correctly scoped. Account-level for everything you do; Project-level for one workstream; the prompt for one conversation.</li>
+    <li>Durable. If it changes each cycle it is an input — though a conditional rule about how to handle recurring inputs is itself durable.</li>
+  </ul>
+  <details style="margin-top:1rem">
+    <summary>Which is the most effective Project instruction?</summary>
+    <ol class="opts">
+      <li>"Always produce high-quality, professional output appropriate to the audience and context."</li>
+      <li>"Write in British English. Executive summaries under 200 words, leading with the recommendation. No bulleted lists in client-facing text."</li>
+      <li>"Refer to the Q3 pricing sheet, the brand guide, and last quarter's board pack when answering."</li>
+      <li>"Handle pricing questions using the current rate card, unless the client is on legacy terms, in which case check with finance, and if the query concerns renewals then apply the renewal matrix instead."</li>
+    </ol>
+    <p class="ans"><strong>B.</strong> Specific, durable, behavioural, checkable — it covers tone, format and a requirement. A is unfalsifiable, which is the real disqualifier. C points at knowledge sources rather than setting behaviour. D is the closest call: conditional rules <em>are</em> endorsed by Claude 101, so it is not wrong for being a conditional — it is wrong because three nested exceptions with an escalation path is a decision tree, not an instruction, and it will crowd out everything else in the panel.</p>
+  </details>
+
+  <h3 style="margin-top:1.7rem">Gap 3 · "Business <em>and technical</em> tasks"</h3>
+  <p>The prompting objective covers business <em>and technical</em> tasks. Preparation material overwhelmingly uses business scenarios — campaigns, board reports, customer emails. The technical half gets skipped, and it is worth roughly one item. Practise prompts for specifying a data transformation, describing a calculation to be performed, defining a schema or output contract, and stating acceptance criteria for something that will be checked programmatically.</p>
+  <p>The general rule holds across both: name the audience, the decision the output must serve, the constraints, and the success criteria. Supply an exemplar when voice or format matters. Intensifiers — "be thorough", "try harder", "think outside the box" — add nothing.</p>
+
+  <div class="callout">
+    <p class="kicker">The three-part prompt framework · Claude 101</p>
+    <p>Before the six techniques, there is a simpler official structure — and Claude 101 presents it as an adaptation of the 4D Framework. Three steps, in order:</p>
+    <ol class="steps" style="margin:.8rem 0">
+      <li><strong>Setting the stage</strong> — who you are, what you are trying to achieve, and the background that bears on it</li>
+      <li><strong>Defining the task</strong> — the actual verb: draft this, analyse that, build the other</li>
+      <li><strong>Specifying rules</strong> — the constraints on style, register and shape, plus any examples worth attaching</li>
+    </ol>
+    <p style="margin-bottom:0">Two things follow. It is an <strong>ordered</strong> three-step sequence, so it can appear as an ordering item. And Academy's guidance on register is worth remembering because it cuts against over-engineering: talk to Claude the way you would talk to a colleague — naturally and concisely, without ceremony.</p>
+  </div>
+
+  <div class="callout">
+    <p class="kicker">The six official techniques</p>
+    <p>Academy names exactly six foundational prompting techniques. If this objective has a canonical answer set, this is it — and no other CCAO-F guide appears to list them.</p>
+    <div class="tw" style="margin-top:.8rem"><table>
+      <thead><tr><th>Technique</th><th>What it means</th></tr></thead>
+      <tbody>
+        <tr><td>Give context</td><td>Say what you want, what it is for, and what background bears on it</td></tr>
+        <tr><td>Show examples</td><td>Demonstrate the style or shape you are after instead of describing it</td></tr>
+        <tr><td>Specify constraints</td><td>Pin down length, format and anything else the output has to satisfy</td></tr>
+        <tr><td>Break into steps</td><td>Walk the model through the reasoning rather than asking for the end point</td></tr>
+        <tr><td>Ask it to think first</td><td>Leave room for the reasoning to happen before the answer arrives</td></tr>
+        <tr><td>Define role or tone</td><td>Say who it is writing as, and in what register</td></tr>
+      </tbody>
+    </table></div>
+    <p style="margin-bottom:0">Academy adds a seventh and calls it the secret weapon: <strong>have the model help you improve the prompt itself.</strong> Note the careful distinction from the self-assessment trap — asking Claude to improve a <em>prompt</em> is endorsed, while asking Claude to rate its own <em>output</em> is not. Those are different operations and an item can turn on the difference.</p>
+  </div>
+
+  <details style="margin-top:1rem">
+    <summary>Which pair of techniques best addresses output that is accurate but arrives in a different structure each time?</summary>
+    <ol class="opts">
+      <li>Give context and define role or tone.</li>
+      <li>Show examples and specify constraints.</li>
+      <li>Ask it to think first and break into steps.</li>
+      <li>Define role or tone and ask it to think first.</li>
+    </ol>
+    <p class="ans"><strong>B.</strong> Structural inconsistency is a Product Description problem, and the two techniques that pin down form are demonstrating it and stating it. C addresses reasoning quality, not output shape. A and D address manner and framing. Mapping a symptom to the right technique is the skill being tested — not reciting the six.</p>
+  </details>
+</section>
+
+<section>
+  <p class="kicker">The pattern</p>
+  <h2>Anthropic teaches in fours</h2>
+  <p class="lede">Reading across Claude Academy, one structural habit stands out: the material is organised into <strong>named, enumerable frameworks</strong> — four Ds, four properties, four decision dimensions, three-part sub-components. This matters directly, because an item asking "which is most descriptive of X" is almost certainly drawing on one of them. Learn the named frameworks and you cover a category of item that pure judgement cannot.</p>
+
+  <h3 style="margin-top:1.6rem">Three ways of engaging with AI</h3>
+  <p>Named in the same lesson as the 4Ds and easy to miss. The 4D competencies "apply across all three."</p>
+  <div class="tw"><table>
+    <thead><tr><th>Mode</th><th>Definition</th></tr></thead>
+    <tbody>
+      <tr><td>Automation</td><td>Claude carries out defined tasks from the instructions you give it</td></tr>
+      <tr><td>Augmentation</td><td>You and Claude work through the thinking and the doing together</td></tr>
+      <tr><td>Agency</td><td>You set Claude up to work independently on your behalf, shaping what it knows and how it behaves rather than directing each action</td></tr>
+    </tbody>
+  </table></div>
+  <p style="font-size:.94rem;color:var(--ink-mid);margin:.9rem 0 1.6rem">The progression is one of decreasing turn-by-turn control. Note that Agency is defined as shaping <em>knowledge and behaviour</em> rather than actions — which is exactly what configuring a Project does. And AI Fluency itself is defined by four adjectives — working with AI <strong>effectively, efficiently, ethically and safely</strong> — four adjectives that map onto the four Ds in order.</p>
+
+  <p style="font-size:.94rem;color:var(--ink-mid);margin:0 0 1.6rem"><strong>One scoping point first.</strong> Academy is careful to point out that most AI in everyday use — spam filters, recommender systems, fraud detection — is not generative at all. Those classify and rank existing content; generative AI produces new content. Everything below applies to the generative kind only, which is a distinction worth having straight if an item contrasts the two.</p>
+
+  <h3 style="margin-top:1.6rem">Where Claude's character comes from · and the four fingerprints</h3>
+  <p>Two training stages, and the second one leaves marks you can predict. <strong>Pretraining</strong> produces something closer to a very capable document completer: it predicts what comes next and has no notion of being helpful to you. <strong>Fine-tuning</strong> then layers assistant behaviour on top, using <em>human judgments</em> about what makes a good response — and that is where the marks come from.</p>
+  <div class="tw"><table>
+    <thead><tr><th>Fingerprint</th><th>How it shows up</th></tr></thead>
+    <tbody>
+      <tr><td>Sycophancy</td><td>A pull toward validating your framing rather than challenging it</td></tr>
+      <tr><td>Verbosity</td><td>A default toward length, even when one sentence would do</td></tr>
+      <tr><td>Over-caution</td><td>Hedging that is reflexive rather than proportionate to real risk</td></tr>
+      <tr><td>Loose calibration</td><td>Stated confidence sits loosely against actual reliability</td></tr>
+    </tbody>
+  </table></div>
+
+  <div class="callout">
+    <p class="kicker">This is <em>why</em> self-assessment never works</p>
+    <p>The guide has said all along that asking Claude to rate its own confidence is always the wrong answer. Here is the documented mechanism: <strong>stated confidence and actual reliability come apart, and that gap is a fingerprint of fine-tuning.</strong> Confidence is a trained-in conversational behaviour, not a measurement. So a high self-rating carries no information about accuracy — it was never wired to.</p>
+    <p style="margin-bottom:0">Sycophancy has the same root, which is why it is so hard to spot: the model was shaped by human preference judgments, and humans prefer being agreed with. That is also why it concentrates exactly where it hurts most — the course’s own reflection exercise asks where sycophancy would cost you most, and answers it: wherever you were hoping for a candid assessment.</p>
+  </div>
+
+  <div class="callout warn">
+    <p class="kicker">The documented countermeasure</p>
+    <p style="margin-bottom:0">Sycophancy has a stated fix, and it is not "be more critical." It is an <strong>explicit invitation to disagree</strong> — a standing request, written into the prompt, to be told when you are wrong. Note this is the invite-pushback remedy named in the properties-collide lesson, and it belongs to Description, not Discernment: you are pre-authorising dissent in the prompt rather than catching flattery afterwards. If an item describes output that conveniently confirms the user's premise, the answer is likely to be either verifying independently or asking for the counter-case explicitly.</p>
+  </div>
+
+  <h3 style="margin-top:1.6rem">The 4 Properties of AI</h3>
+  <p>A second four-part framework, parallel to the 4Ds and just as testable. Where the 4Ds describe how <em>you</em> should work, the properties describe how the <em>model</em> works — the mechanism behind every failure in the evaluation and troubleshooting domains. Summarised from the course:</p>
+  <div class="tw"><table>
+    <thead><tr><th>Property</th><th>What it means</th></tr></thead>
+    <tbody>
+      <tr><td>Next token prediction</td><td>Produces text one piece at a time on the basis of what usually follows what. Extraordinarily capable autocomplete, not retrieval</td></tr>
+      <tr><td>Knowledge</td><td>Everything it knows comes from training data with a fixed cut-off. What was in that data, and when the reading stopped</td></tr>
+      <tr><td>Working memory</td><td>Whatever the model is attending to has to fit a context window of fixed size. Leverage while you are inside it, a cliff when you are not</td></tr>
+      <tr><td>Steerability</td><td>Honours an instruction by extending a pattern rather than by grasping a purpose. Very steerable, and always some distance between the intent and what lands</td></tr>
+    </tbody>
+  </table></div>
+  <p style="font-size:.94rem;color:var(--ink-mid);margin:.9rem 0 1.1rem">Academy teaches each property with the same five-part anatomy — a <strong>capability zone</strong>, a <strong>limitation zone</strong>, characteristic failures, the product features that exist to patch it, and a <strong>4D connection</strong>. That last one is the part worth memorising, because it links this framework to the other one.</p>
+  <p style="font-size:.94rem;color:var(--ink-mid);margin:0 0 1.1rem">Each property also reduces to one question, which is the fastest way to hold all four: <strong>How is this answer being produced?</strong> (next token prediction) · <strong>What does it actually know?</strong> (knowledge) · <strong>What can it currently see?</strong> (working memory) · <strong>How much steering do I have?</strong> (steerability).</p>
+  <div class="callout" style="margin:0 0 1.4rem">
+    <p class="kicker">Calibrated trust</p>
+    <p style="margin-bottom:0">Each property is a continuum, and <strong>the same mechanism produces both the capability and the limitation.</strong> Which gives the course its definition of the skill: calibrated trust means placing a particular task somewhere along that continuum, rather than trusting or distrusting the system wholesale. That is the rigorous version of trust-is-a-dial — you are not deciding whether Claude is reliable, you are deciding where <em>this task</em> sits on four separate axes.</p>
+  </div>
+
+  <div class="tw"><table>
+    <thead><tr><th>Property</th><th>Limitation zone</th><th>Characteristic failure</th><th>4D link</th></tr></thead>
+    <tbody>
+      <tr><td>Next token prediction</td><td>Novel or sparse territory; anything needing "true" distinguished from "sounds true"</td><td>Fabrication</td><td>Discernment</td></tr>
+      <tr><td>Knowledge</td><td>Anything niche, local, contested, or later than the cut-off</td><td>Staleness, uneven coverage, inherited defaults</td><td>Delegation</td></tr>
+      <tr><td>Working memory</td><td>Long documents and long conversations; assuming continuity between sessions; hiding the key detail in the middle of a large input</td><td>Silent truncation</td><td>Description</td></tr>
+      <tr><td>Steerability</td><td>Long reasoning chains; abstract or ambiguous instructions; numerical or logical precision</td><td>Reasoning drift, letter-over-spirit</td><td>Description</td></tr>
+    </tbody>
+  </table></div>
+
+  <div class="callout">
+    <p class="kicker">Four rules from this course that answer exam items directly</p>
+    <ul class="plain" style="margin:.7rem 0">
+      <li><strong>Fabrication clusters wherever a claim gets specific</strong> — a name, a date, a figure, a citation, a URL, a quotation. Precision is the signal to check, not a sign of reliability. That is a far sharper trigger than a general instruction to verify what matters.</li>
+      <li><strong>Working memory has a cliff, not a gradient.</strong> The failure mode is silent truncation, and you will not always be warned. Nothing tells you the context was cut.</li>
+      <li><strong>Correcting the model teaches it nothing.</strong> It responds only to what is in front of it in the current context. This is why correcting Claude repeatedly in a conversation is not a fix — the correction has to live in configuration.</li>
+      <li><strong>When an instruction is followed to the letter and still misses the point, restate the goal rather than the instruction.</strong> Saying the same thing more forcefully does not close that gap. That is the letter-over-spirit failure, and it is the mechanism behind every "be more concise" item.</li>
+    </ul>
+    <p style="margin-bottom:0">Note the fourth one carefully. It says restate the <em>goal</em>, not add more constraints — a subtler prescription than the guide's earlier "replace the vague directive with a hard constraint." Both work; naming the intent is the officially documented move.</p>
+  </div>
+
+  <div class="callout warn">
+    <p class="kicker">When properties collide · the actual diagnostic skill</p>
+    <p>Academy is explicit that <strong>failures in practice usually involve two properties interacting rather than one</strong>, and it names two diagnostic pairs to recognise on sight:</p>
+    <div class="tw" style="margin-top:.7rem"><table>
+      <thead><tr><th>Pair</th><th>Presents as</th></tr></thead>
+      <tbody>
+        <tr><td>Next token prediction + Knowledge</td><td>Hallucinated specifics — a confident, precise claim about something thinly represented in training</td></tr>
+        <tr><td>Working memory + Steerability</td><td>Long-conversation drift — the constraint was given, and has quietly fallen out of attention</td></tr>
+      </tbody>
+    </table></div>
+    <p style="margin-bottom:0">Once you can name which properties are in play, the remedy follows directly: verify the specifics, re-supply the context, hand the arithmetic to code execution, or invite pushback. Four properties, two pairs, four fixes — the course frames this as Discernment put to work. If an item describes a failure and asks for the cause or the remedy, this is the frame.</p>
+  </div>
+
+  <h3 style="margin-top:1.8rem">The Description spectrum</h3>
+  <p>This is Anthropic's own framing of the distinction that dominates the configuration domain, and it is more useful than the durable-versus-per-instance rule because it has three levels rather than two. Academy sets out the range of ways you can shape what Claude gives you and orders them by <strong>durability</strong>:</p>
+  <div class="tw"><table>
+    <thead><tr><th>Level</th><th>Scope</th><th>Examples</th></tr></thead>
+    <tbody>
+      <tr><td>Basic</td><td>Single turn</td><td>Iterating, adding context, uploading a file</td></tr>
+      <tr><td>Middle</td><td>Moderate persistence</td><td>Features that hold for a stretch of work</td></tr>
+      <tr><td>Lasting</td><td>All subsequent interactions</td><td>Configuration — instructions, personalisation</td></tr>
+    </tbody>
+  </table></div>
+  <p style="font-size:.94rem;color:var(--ink-mid);margin:.9rem 0 0">Note that it sits under <em>Description</em>, not under some separate configuration heading. Choosing where a rule lives is a description decision — you are still communicating what you want, just at a longer time horizon.</p>
+
+  <h3 style="margin-top:1.8rem">Trust is a dial, not a switch</h3>
+  <div class="callout">
+    <p>Academy's framing of the human-review question, and it is more precise than "when is review required." The instruction is to adjust <strong>your own level of scrutiny</strong> to the stakes, using a medical analogy: you would not question a doctor who suggested eating more carrots, but you would want a second opinion before surgery.</p>
+    <p style="margin-bottom:0">Practically: the same output warrants light review as an internal brainstorm and rigorous verification as a board input. The question is never "is Claude trustworthy" but "how consequential is this particular use."</p>
+  </div>
+
+  <div class="callout warn">
+    <p class="kicker">A failure mode most guides omit</p>
+    <p style="margin-bottom:0">Academy names <strong>two</strong> ways answers go wrong: hallucination <em>and</em> <strong>sycophancy</strong> — the model agreeing with you, validating a premise, or softening a finding because that is what the conversation seems to want. It is harder to spot than fabrication precisely because it feels like agreement rather than error. If an item describes output that conveniently confirms what the user already believed, or a critique that has gone strangely gentle, sycophancy is the name for it.</p>
+  </div>
+
+  <h3 style="margin-top:1.8rem">Signature moves, and what does not transfer</h3>
+  <p>Academy's research-backed curriculum gives each surface a signature move — the first habit worth building. In <strong>Chat</strong> it is <em>iterating</em>, refining through follow-up turns. In <strong>Cowork</strong> and <strong>Claude Code</strong> it is <em>clarifying the goal</em> before Claude executes, because you are handing off rather than steering turn by turn.</p>
+  <div class="callout">
+    <p class="kicker">The most useful sentence on the whole site</p>
+    <p>Academy's finding is that discernment does not accumulate with time served, and it does not come along for the ride with product knowledge. Knowing the tool well does <em>not</em> make you better at judging what it produces. That has to be taught on purpose, which is the whole premise of this guide.</p>
+    <p style="margin-bottom:0">This predicts the exact shape of the breakdown behind this guide: every product and model-selection objective came back perfect, while evaluating accuracy and completeness, and deciding when review is required, both lagged well behind. Feature knowledge was strong and discernment trailed it, exactly as the research says it would. <strong>If you are preparing and feel confident because you know the features well, that is the warning sign rather than the reassurance.</strong></p>
+  </div>
+
+  <h3 style="margin-top:1.8rem">The four building blocks of standing context</h3>
+  <p>A fourth four-part framework, and the one that most directly reframes the configuration domain. Cowork's course names four ways Claude accumulates knowledge about your work, each carrying something different forward:</p>
+  <div class="tw"><table>
+    <thead><tr><th>Block</th><th>What Claude learns</th></tr></thead>
+    <tbody>
+      <tr><td>Global instructions</td><td>Standing facts about you and how you prefer to work</td></tr>
+      <tr><td>Projects</td><td>Everything belonging to a single line of work</td></tr>
+      <tr><td>Skills</td><td>The steps a particular process should follow</td></tr>
+      <tr><td>Plugins</td><td>Your team's encoded expertise, packaged and distributed</td></tr>
+    </tbody>
+  </table></div>
+  <div class="callout">
+    <p class="kicker">The cleanest scope rule in any of the courses</p>
+    <p><strong>Global instructions are about you. A project is about the work.</strong></p>
+    <p style="margin-bottom:0">That one distinction answers every account-versus-project scope item, and it explains <em>why</em> rather than just stating the boundary. Global instructions carry who you are, the vocabulary you use, and the form you want answers in. A Project carries one stream of work.</p>
+  </div>
+  <div class="callout warn">
+    <p class="kicker">The maintenance heuristic worth memorising</p>
+    <p style="margin-bottom:0">Cowork’s course is explicit that a set of global instructions is not meant to arrive finished. It grows: whatever you keep having to say again is the next thing that belongs in it. <strong>A correction you find yourself repeating is a configuration candidate.</strong> That is the documented answer to the objective on keeping configurations and instructions current — configuration is grown from observed friction, not designed in advance. It also confirms from the other direction why repeatedly correcting Claude in-conversation is not a fix.</p>
+  </div>
+  <p style="margin-top:1.4rem">A Cowork project has <strong>four parts — three you set up and one Claude builds</strong>: instructions scoped to the project, scheduled tasks that run with the project's context, context folders or links every conversation can reach, and <strong>memory</strong>, which accumulates as you work rather than being written by you. Note the contrast the course draws: in Chat, memory builds itself automatically, whereas in Cowork most of what carries from one task to the next is context you deliberately set up. Away from a project, every session begins from nothing except your global instructions.</p>
+
+  <h3 style="margin-top:1.8rem">Cowork or Chat</h3>
+  <p>Academy's decision table turns on four dimensions. Worth knowing because the Associate blueprint centres on Claude.ai but the product surface has widened since.</p>
+  <div class="tw"><table>
+    <thead><tr><th>Dimension</th><th>Chat</th><th>Cowork</th></tr></thead>
+    <tbody>
+      <tr><td>Goal clarity</td><td>You are still figuring out what you want</td><td>You know what the finished thing is</td></tr>
+      <tr><td>Work scope</td><td>A short exchange</td><td>Many steps, several sources, or a long run time</td></tr>
+      <tr><td>Your involvement</td><td>You are there for every turn</td><td>You brief it once and come back to the result</td></tr>
+      <tr><td>Output type</td><td>Text you read or copy out</td><td>A finished file, or something done</td></tr>
+    </tbody>
+  </table></div>
+
+  <div class="callout warn">
+    <p class="kicker">Where the guide and the product have diverged</p>
+    <p style="margin-bottom:0">The published exam guide names the model tiers as "Haiku, Sonnet, Opus." Academy's current model tutorial is titled <em>"Choosing the right Claude model: Haiku, Sonnet, Opus, or Fable."</em> Learn tier <em>positioning</em> — fastest and cheapest, balanced, most capable — rather than a fixed list of names, because the list moves and the positioning does not.</p>
+  </div>
+</section>
+
+<section>
+  <p class="kicker">The inference worth making</p>
+  <h2>The two frameworks are one system</h2>
+  <p class="lede">Read across the four properties and something falls out that neither course states outright: <strong>each property is the reason its matching D exists.</strong> The 4Ds are not an arbitrary list of good habits. They are the four competencies you need precisely because the model has those four properties.</p>
+  <div class="tw"><table>
+    <thead><tr><th>Because the model…</th><th>You need…</th><th>Which is why</th></tr></thead>
+    <tbody>
+      <tr><td>knows unevenly and is frozen at a cutoff</td><td><strong>Delegation</strong></td><td>you must decide what to hand over and what to supply yourself</td></tr>
+      <tr><td>attends to a fixed window, and follows words not intent</td><td><strong>Description</strong></td><td>how you structure and phrase context is the whole lever</td></tr>
+      <tr><td>predicts plausible text rather than retrieving truth</td><td><strong>Discernment</strong></td><td>fluency is not accuracy, so output must be judged</td></tr>
+      <tr><td>does all of the above invisibly, at scale, in your name</td><td><strong>Diligence</strong></td><td>the responsibility cannot sit with the tool</td></tr>
+    </tbody>
+  </table></div>
+  <div class="callout">
+    <p class="kicker">Why this is worth holding</p>
+    <p>Two frameworks of four is eight things to memorise. One framework of four with a mechanism behind each is one thing to understand — and understanding survives paraphrase in a way memorised lists do not.</p>
+    <p style="margin-bottom:0">It also predicts the answer when an item gives you a symptom rather than a label. A confident, precise, unverifiable claim is next-token prediction meeting a thin patch of knowledge, so the response is <em>Discernment</em> — verify the specific. A constraint given forty messages ago and quietly dropped is working memory meeting steerability, so the response is <em>Description</em> — move the constraint into configuration rather than restating it. You are not matching keywords; you are reasoning from mechanism to competency to action.</p>
+  </div>
+  <div class="callout warn">
+    <p class="kicker">And a fifth thing the properties do not cover</p>
+    <p style="margin-bottom:0">The four properties explain what the model <em>can</em> do. The four fine-tuning fingerprints — sycophancy, verbosity, over-caution, loose calibration — explain how it <em>behaves while doing it</em>. That distinction matters on the exam, because a fingerprint failure looks like a capability failure and is not one. Output that flatters your premise is not a knowledge gap. Output that runs long is not a steerability gap. Both are trained-in dispositions, and both are addressed in the prompt rather than by changing tier, tool, or model.</p>
+  </div>
+  <p style="font-size:.94rem;color:var(--ink-soft);margin:1.2rem 0 0"><em>Flagged as inference: the property-to-D links are Academy's own, stated per lesson. Reading them as a single causal system, and setting the fingerprints alongside them as a separate axis, is this guide's synthesis rather than a claim either course makes.</em></p>
+</section>
+
+<section>
+  <p class="kicker">The item type nobody prepares for</p>
+  <h2>Sequencing items</h2>
+  <p class="lede">You will get somewhere between five and ten items — potentially a sixth of the paper — that present five activities and ask which order performs the task correctly. The published guide describes only multiple-choice and multiple-response, so these arrive as multiple-choice, with <strong>five candidate orderings</strong> as the options rather than the usual four. Almost no preparation material covers them, which makes them the single highest-value thing on this page.</p>
+
+  <div class="callout warn">
+    <p class="kicker">Why they are dangerous</p>
+    <p>They are not knowledge items. You can know every fact in this guide and still lose eight items here, because the skill being tested is whether you understand that business and AI workflows have a <strong>dependency order</strong> — and that most wrong orderings are wrong for one specific, findable reason.</p>
+  </div>
+
+  <h3 style="margin-top:1.7rem">The spine</h3>
+  <p>Nearly every sequence on this exam is a specialisation of one shape. Learn the shape and you can reconstruct any particular sequence.</p>
+  <ol class="steps">
+    <li><strong>Understand</strong> — what is this for, what decision does it serve, who is it for</li>
+    <li><strong>Frame</strong> — scope, structure, criteria for success</li>
+    <li><strong>Gather</strong> — the inputs the work draws on</li>
+    <li><strong>Produce</strong> — the draft, the design, the analysis</li>
+    <li><strong>Check</strong> — against sources, against scope, against criteria</li>
+    <li><strong>Adapt</strong> — for the audience who will actually read it</li>
+    <li><strong>Approve</strong> — the named human who owns the release</li>
+    <li><strong>Deploy and measure</strong> — pilot, then scale, then check against the baseline</li>
+  </ol>
+
+  <h3 style="margin-top:1.7rem">Ten ordering rules</h3>
+  <ul class="plain">
+    <li><strong>Purpose is always first.</strong> Nothing precedes knowing what the work is for. If one activity defines the objective, it goes first — no exceptions.</li>
+    <li><strong>Who before what.</strong> Audience or persona precedes content, because it determines what the content should be.</li>
+    <li><strong>Frame before fill.</strong> Structure, outline, or stages come before gathering detail to put in them.</li>
+    <li><strong>Gather before generate.</strong> You cannot analyse evidence you have not collected.</li>
+    <li><strong>Enumerate before evaluate.</strong> List the risks before scoring them, map the steps before classifying them.</li>
+    <li><strong>Fix accuracy before polishing tone.</strong> Correctness precedes audience adaptation.</li>
+    <li><strong>Adapt before approve.</strong> The approver must see the version that ships.</li>
+    <li><strong>Approve before distribute.</strong> Always.</li>
+    <li><strong>Pilot before scale.</strong> And capture the baseline before you change anything, or the pilot has nothing to measure against.</li>
+    <li><strong>Verify the fix before institutionalising it.</strong> Confirm it worked, then set the review cycle that prevents recurrence.</li>
+  </ul>
+
+  <h3 style="margin-top:1.7rem">The three traps</h3>
+  <p>Wrong orderings on this exam are rarely random. They are usually one of these:</p>
+  <div class="tw"><table>
+    <thead><tr><th>Trap</th><th>What it looks like</th></tr></thead>
+    <tbody>
+      <tr><td>Premature approval</td><td>Sign-off placed before the last edit, so the owner approved a document that then changed</td></tr>
+      <tr><td>Acting before diagnosing</td><td>Changing a variable before forming a hypothesis about what is wrong</td></tr>
+      <tr><td>Prevention before verification</td><td>Setting up the review cycle before confirming the fix actually worked</td></tr>
+    </tbody>
+  </table></div>
+
+  <h3 style="margin-top:1.7rem">The engagement mode sets the shape</h3>
+  <p>This is the key that makes ordering items tractable. Academy states the 4D competencies "apply across all three" engagement modes — but the <em>shape</em> of the work differs by mode, and so does the sequence. Read the scenario, identify the mode, and you know which sequence family you are in before you look at the options.</p>
+  <div class="tw"><table>
+    <thead><tr><th>Mode</th><th>Sequence shape</th><th>Tell in the stem</th></tr></thead>
+    <tbody>
+      <tr><td>Automation</td><td>Define the task → specify instructions and constraints → execute → verify → use</td><td>A one-off deliverable produced to instruction</td></tr>
+      <tr><td>Augmentation</td><td>Describe → Discern → Refine → Integrate, iterating</td><td>Working alongside Claude, several turns, thinking partner</td></tr>
+      <tr><td>Agency</td><td>Define purpose → establish knowledge → establish behaviour → operate → maintain</td><td>Setting something up that will run repeatedly without you</td></tr>
+    </tbody>
+  </table></div>
+  <p style="font-size:.94rem;color:var(--ink-mid);margin:.9rem 0 0">Note what the Agency row actually is. Academy’s definition turns on two verbs: you <strong>configure</strong> the system to act on your behalf, <strong>establishing</strong> what it knows and how it behaves instead of handing it individual tasks. That is the configuration domain in one sentence. If a stem describes standing something up that others will use later, that is the family.</p>
+
+  <div class="callout warn">
+    <p class="kicker">The official Project setup order · and it is not what you would guess</p>
+    <p>Claude 101 gives three numbered steps: <strong>Step 1 set up the project</strong> (name, description, visibility) → <strong>Step 2 add project instructions</strong> → <strong>Step 3 build your knowledge base</strong>.</p>
+    <p style="margin-bottom:0"><strong>Instructions come before knowledge.</strong> Most people — this guide included, until now — would order it the other way, on the reasoning that you gather the material and then write rules about it. The official sequence is behaviour first, content second. If a Project-setup ordering item appears, this is the answer, and the intuitive order is the trap.</p>
+  </div>
+
+  <div class="callout">
+    <p class="kicker">Three questions, in order</p>
+    <p>Which engagement mode is this? Then, does the activity match a named framework? Then, and only then, fall back on the generic slots.</p>
+    <p style="margin-bottom:0">Most candidates skip straight to the third question, which is why these items eat clock. The first question takes five seconds and usually eliminates half the answer space.</p>
+  </div>
+
+  <h3 style="margin-top:1.7rem">Where the sequences actually come from</h3>
+  <p>This is the part most guides get wrong, including an earlier draft of this one. Sequencing items are <strong>not</strong> testing Claude-specific knowledge. They are testing whether you know how the underlying business activity is properly conducted — and the Claude layer only determines where the human checkpoints sit. A journey map is sequenced the way journey maps have always been sequenced, whether or not AI is involved.</p>
+  <p>So the material to know is standard professional practice. These four are the ones worth holding, and only the last is Anthropic's own.</p>
+
+  <div class="tw"><table>
+    <thead><tr><th>Framework</th><th>Sequence</th><th>Shows up in</th></tr></thead>
+    <tbody>
+      <tr><td>Journey mapping</td><td>Scope the decision → identify personas → map stages and touchpoints → gather evidence → validate with owners</td><td>Requirements and use-case items</td></tr>
+      <tr><td>DMAIC</td><td>Define → Measure → Analyse → Improve → Control</td><td>Process optimisation items</td></tr>
+      <tr><td>Design thinking</td><td>Empathise → Define → Ideate → Prototype → Test</td><td>Solution design items</td></tr>
+      <tr><td>4D <span class="flag">official</span></td><td>Delegation → Description → Discernment → Diligence</td><td>Anything framed on AI collaboration</td></tr>
+    </tbody>
+  </table></div>
+
+  <p><strong>Notice what they share.</strong> Every one of them runs understand → specify → produce → check → embed. DMAIC makes the last step explicit and names it <em>Control</em> — putting something in place so the improvement holds. That is the same move as setting a review cycle after fixing a stale Project, and it is the step candidates most often place too early.</p>
+
+  <div class="callout">
+    <p class="kicker">Anthropic's own interaction pattern</p>
+    <p>Every use-case walkthrough on Claude Academy is structured identically, and the first four steps are a genuine workflow worth knowing:</p>
+    <p><strong>Describe the task</strong> — state what you are evaluating and the criteria that matter. <strong>Give Claude context</strong> — upload the files, enable the connectors. <strong>What Claude creates</strong> — the output. <strong>Follow up</strong> — refine, extend, or convert into something reusable.</p>
+    <p style="margin-bottom:0">Note that criteria come <em>before</em> context, and context before output. That ordering is Anthropic's, not an inference, and it maps onto Description then Discernment in the 4D framework.</p>
+  </div>
+
+  <h3 style="margin-top:1.8rem">A working shortcut, honestly labelled</h3>
+  <div class="callout warn">
+    <p class="kicker">Inference, not doctrine</p>
+    <p>What follows is a pattern observed across the eight practice items below, which were written for this guide rather than drawn from any published source. Two official five-step sequences now exist in the framework section above — <em>Delegate, Describe, Discern, Refine, Integrate</em> and the project-planning sequence — and where an item matches either of those, use the official one. The slots below are the fallback for activities that match no named framework.</p>
+    <p style="margin-bottom:0">The pattern: <strong>slot 1 is an understand-or-define activity, and slots 4 and 5 are usually a prove-then-commit pair.</strong> Which leaves slots 2 and 3 as the real decision — a two-way choice rather than a hundred-and-twenty-way one.</p>
+  </div>
+
+  <div class="tw"><table>
+    <thead><tr><th>Slot</th><th>What tends to live there</th></tr></thead>
+    <tbody>
+      <tr><td>1 · Understand</td><td>Define the purpose, map the current state, or notice the problem</td></tr>
+      <tr><td>2 · Who or which</td><td>Persona, audience, segment, classification, owner</td></tr>
+      <tr><td>3 · Shape or source</td><td>Structure, stages, design, instructions, evidence gathered</td></tr>
+      <tr><td>4 · Prove</td><td>Verify, test, pilot, confirm, compare against criteria</td></tr>
+      <tr><td>5 · Commit</td><td>Approve, release, scale, institutionalise</td></tr>
+    </tbody>
+  </table></div>
+
+  <p><strong>Tie-breaker for slots 2 and 3:</strong> who before shape, shape before content. The audience determines the structure, and the structure determines what fills it. In a journey map that is persona, then stages, then evidence per stage — never evidence first, because you would not know what to gather it against.</p>
+
+  <div class="callout warn">
+    <p class="kicker">The one exception</p>
+    <p style="margin-bottom:0">Iterative sequences end on <em>revise</em>, not on commit, because the Description–Discernment loop is cyclical rather than terminal. If the five activities describe improving a prompt or a draft rather than shipping something, expect compare-then-revise as the closing pair.</p>
+  </div>
+
+  <div class="callout">
+    <p class="kicker">Working an item under time pressure</p>
+    <p>Ask first whether the activity matches a framework above. If it does, use the framework — that is knowledge, not guesswork. If it does not, fall back on the slots: find the opener and strike every option that does not begin with it, assume the closing pair and strike again, then settle slots 2 and 3 with who-before-shape.</p>
+    <p>Either route is three small judgements rather than one large one. That matters because these items eat clock, and clock is the resource you are shortest of.</p>
+    <p style="margin-bottom:0"><strong>Hard rule: if a sequencing item passes ninety seconds, commit to your best ordering, flag it, and move on.</strong> At five to ten items they can quietly consume a third of the paper. The candidate whose report this guide is built on passed comfortably and still reports these as where most of the time went — they are the clock risk on this exam, not the knowledge risk.</p>
+  </div>
+
+  <div class="callout">
+    <p class="kicker">Worth noticing</p>
+    <p style="margin-bottom:0">The 4D framework is itself a sequence: <strong>Delegation, then Description, then Discernment, then Diligence.</strong> Decide what to hand over, communicate it, evaluate what comes back, take responsibility for the result. If a sequencing item is built on the framework, that is the order.</p>
+  </div>
+
+  <h3 style="margin-top:1.8rem">Practice</h3>
+  <p class="lede" style="margin-bottom:1rem">Eight items. Work the anchors-and-eliminate method rather than reasoning forward, and time yourself — these should take under two minutes each once the technique is habitual.</p>
+
+  <details>
+    <summary>Creating a customer journey map</summary>
+    <ol class="opts" style="list-style:decimal">
+      <li>Validate the map with the stakeholders who own each touchpoint</li>
+      <li>Identify the personas whose journey is being mapped</li>
+      <li>Define what decision the journey map is meant to inform</li>
+      <li>Gather evidence for each stage from support and analytics data</li>
+      <li>Map the stages and touchpoints for each persona</li>
+    </ol>
+    <ol class="opts" style="margin-top:.7rem">
+      <li>3, 2, 5, 4, 1</li>
+      <li>2, 3, 5, 4, 1</li>
+      <li>3, 5, 2, 4, 1</li>
+      <li>2, 5, 4, 3, 1</li>
+    </ol>
+    <p class="ans"><strong>A — 3, 2, 5, 4, 1.</strong> Purpose first, because which personas matter depends on the decision being served. Persona before stages, because the stages differ by persona. Stages before evidence, because you need the frame to gather against. Validation last. Anchors alone settle it: only A and C start with 3, and C maps stages before knowing whose journey it is.</p>
+  </details>
+
+  <details>
+    <summary>Integrating Claude into an existing process</summary>
+    <ol class="opts" style="list-style:decimal">
+      <li>Scale to the remaining teams</li>
+      <li>Classify each step by suitability for Claude</li>
+      <li>Map the current process end to end</li>
+      <li>Pilot with one team and measure against the baseline</li>
+      <li>Design where human review sits in the new flow</li>
+    </ol>
+    <ol class="opts" style="margin-top:.7rem">
+      <li>3, 2, 5, 4, 1</li>
+      <li>2, 3, 5, 4, 1</li>
+      <li>3, 5, 2, 4, 1</li>
+      <li>3, 2, 4, 5, 1</li>
+    </ol>
+    <p class="ans"><strong>A — 3, 2, 5, 4, 1.</strong> Map, classify, design checkpoints, pilot, scale. You cannot classify steps you have not mapped, and you cannot place review points until you know which steps Claude touches. D is the trap: piloting before designing the human checkpoints means piloting an uncontrolled workflow.</p>
+  </details>
+
+  <details>
+    <summary>Circulating a policy summary to 400 staff</summary>
+    <ol class="opts" style="list-style:decimal">
+      <li>Circulate it to the 400 staff</li>
+      <li>Define what the summary must cover and for whom</li>
+      <li>Verify its claims and coverage against the source policy</li>
+      <li>Adjust the reading level for the intended audience</li>
+      <li>Obtain the named owner's approval for release</li>
+    </ol>
+    <ol class="opts" style="margin-top:.7rem">
+      <li>2, 3, 4, 5, 1</li>
+      <li>2, 4, 3, 5, 1</li>
+      <li>3, 2, 4, 5, 1</li>
+      <li>2, 3, 5, 4, 1</li>
+    </ol>
+    <p class="ans"><strong>A — 2, 3, 4, 5, 1.</strong> Define, verify, adapt, approve, circulate. <strong>D is the premature-approval trap</strong> and it is the most instructive distractor here: approving at position four means the owner signed off on a document that was then rewritten for reading level. Approval must be the last thing before release.</p>
+  </details>
+
+  <details>
+    <summary>A Project's answers have gone stale</summary>
+    <ol class="opts" style="list-style:decimal">
+      <li>Replace the superseded documents with current versions</li>
+      <li>Notice that answers have begun citing outdated figures</li>
+      <li>Identify which knowledge sources are out of date</li>
+      <li>Confirm the corrected Project now answers correctly</li>
+      <li>Set a review cycle so the problem does not recur</li>
+    </ol>
+    <ol class="opts" style="margin-top:.7rem">
+      <li>2, 1, 3, 4, 5</li>
+      <li>2, 3, 1, 4, 5</li>
+      <li>3, 2, 1, 5, 4</li>
+      <li>2, 3, 1, 5, 4</li>
+    </ol>
+    <p class="ans"><strong>B — 2, 3, 1, 4, 5.</strong> Notice, diagnose, fix, verify, prevent recurrence. A replaces documents before identifying which ones are stale. <strong>D is the prevention-before-verification trap</strong> — instituting a review cycle before confirming the fix worked.</p>
+  </details>
+
+  <details>
+    <summary>Summaries keep omitting a required section</summary>
+    <ol class="opts" style="list-style:decimal">
+      <li>Change one element of the prompt and retest</li>
+      <li>Reproduce the failure on a single minimal example</li>
+      <li>Note that summaries are omitting a required section</li>
+      <li>Check whether the requirement is buried among other instructions</li>
+      <li>Confirm the fix holds across the wider document set</li>
+    </ol>
+    <ol class="opts" style="margin-top:.7rem">
+      <li>3, 2, 4, 1, 5</li>
+      <li>3, 4, 2, 1, 5</li>
+      <li>2, 3, 4, 1, 5</li>
+      <li>3, 2, 1, 4, 5</li>
+    </ol>
+    <p class="ans"><strong>A — 3, 2, 4, 1, 5.</strong> Notice, reproduce, hypothesise, change one variable, confirm at scale. <strong>D is the acting-before-diagnosing trap.</strong> Note also that reproduction precedes hypothesis: you cannot reason about a failure you cannot yet trigger reliably.</p>
+  </details>
+
+  <details>
+    <summary>A partner-supplied dataset arrives for analysis</summary>
+    <ol class="opts" style="list-style:decimal">
+      <li>Run the analysis</li>
+      <li>Establish what the data-sharing agreement permits</li>
+      <li>Identify that the dataset is governed by a partner agreement</li>
+      <li>Obtain written approval for the intended use</li>
+      <li>Confirm whether any personal data needs de-identification</li>
+    </ol>
+    <ol class="opts" style="margin-top:.7rem">
+      <li>3, 2, 5, 4, 1</li>
+      <li>3, 2, 4, 5, 1</li>
+      <li>2, 3, 5, 4, 1</li>
+      <li>3, 5, 2, 4, 1</li>
+    </ol>
+    <p class="ans"><strong>A — 3, 2, 5, 4, 1.</strong> Identify the governing instrument, read what it permits, check whatever other controls apply, obtain approval, then proceed. B seeks approval before establishing whether de-identification is needed, so the approval covers an incompletely specified plan. C cannot be right — you cannot read an agreement you have not yet realised applies.</p>
+  </details>
+
+  <details>
+    <summary>Developing a prompt for a recurring drafting task</summary>
+    <ol class="opts" style="list-style:decimal">
+      <li>Supply two exemplars written in the required voice</li>
+      <li>State the audience and the decision the output must support</li>
+      <li>Compare the output against the stated criteria</li>
+      <li>Set the format, length, and constraints</li>
+      <li>Name the specific defect and revise the prompt</li>
+    </ol>
+    <ol class="opts" style="margin-top:.7rem">
+      <li>2, 4, 1, 3, 5</li>
+      <li>4, 2, 1, 3, 5</li>
+      <li>2, 1, 4, 3, 5</li>
+      <li>2, 4, 1, 5, 3</li>
+    </ol>
+    <p class="ans"><strong>A — 2, 4, 1, 3, 5.</strong> Audience and purpose, then constraints, then exemplars, then evaluate, then revise. This is the Description–Discernment loop in sequence form. <strong>D inverts the last pair</strong> — naming a defect before comparing against criteria means the defect was asserted rather than found.</p>
+  </details>
+
+  <details>
+    <summary>Setting up a two-tier routing workflow</summary>
+    <ol class="opts" style="list-style:decimal">
+      <li>Measure error rates on both routes and adjust the threshold</li>
+      <li>Establish which cases are routine and which need judgement</li>
+      <li>Define what the workflow must produce and to what standard</li>
+      <li>Implement the routing rule between the two tiers</li>
+      <li>Select a tier for each of the two case types</li>
+    </ol>
+    <ol class="opts" style="margin-top:.7rem">
+      <li>3, 2, 5, 4, 1</li>
+      <li>2, 3, 5, 4, 1</li>
+      <li>3, 2, 4, 5, 1</li>
+      <li>3, 5, 2, 4, 1</li>
+    </ol>
+    <p class="ans"><strong>A — 3, 2, 5, 4, 1.</strong> Define the standard, segment the cases, select a tier for each, implement the routing, then measure and tune. C implements routing before choosing what to route to. D selects tiers before knowing what the case types are.</p>
+  </details>
+</section>
+
+<section>
+  <p class="kicker">The core</p>
+  <h2>Four rules that settle most items</h2>
+  <ol class="steps">
+    <li><strong>Structure beats cleverness.</strong> Torn between a better prompt and a verification, governance, or configuration step? Take the mechanism.</li>
+    <li><strong>Accurate is not usable.</strong> Output can be wholly correct and still unfit — exceeding the sender's authority, burying a material conflict, omitting something silently, or landing at the wrong level for its reader.</li>
+    <li><strong>The model is rarely the answer.</strong> Right about one time in ten, and only on evidence of a capability ceiling: failure specifically on harder cases, after refinement has genuinely been tried.</li>
+    <li><strong>Escalate when it is not yours; diagnose when it is.</strong> Escalate for API work, fine-tuning, production architecture, legal or regulatory liability. Not merely because something is unfamiliar.</li>
+  </ol>
+  <div class="callout" style="margin-top:1.5rem">
+    <p class="kicker">The single most missed distinction</p>
+    <p>When policy assigns work to another function, the question is <strong>who owns this document</strong> — not whether you can make the draft accurate. "Draft it, then have legal review it" feels diligent and is wrong: the framing is already decided by the time they see it. Verification is the right instinct almost everywhere else, which is exactly why it misfires here.</p>
+  </div>
+</section>
+
+<section>
+  <p class="kicker">Reference</p>
+  <h2>Which capability</h2>
+  <div class="tw"><table>
+    <thead><tr><th>Need</th><th>Reach for</th></tr></thead>
+    <tbody>
+      <tr><td>One current fact</td><td>Web search, one or two lookups</td></tr>
+      <tr><td>Reasoning, nothing to retrieve</td><td>Extended thinking</td></tr>
+      <tr><td>Multi-source synthesis, cited</td><td>Research, five or more lookups</td></tr>
+      <tr><td>Compute over data, or produce a real file</td><td>Code execution</td></tr>
+      <tr><td>Same materials across many conversations</td><td>Project</td></tr>
+      <tr><td>A repeatable procedure</td><td>Skill</td></tr>
+      <tr><td>Facts about you and how you work</td><td>Memory or personalisation</td></tr>
+    </tbody>
+  </table></div>
+  <p style="font-size:.94rem;color:var(--ink-mid);margin:.9rem 0 0">Research and extended thinking combine — Claude 101 notes that the two work together, so Claude can plan a line of enquiry before it begins searching.</p>
+  <div class="callout" style="margin-top:1rem">
+    <p class="kicker">Tier guidance, as Academy actually states it</p>
+    <p><strong>Sonnet is the recommended default and the right choice for most everyday work.</strong> Opus is positioned for the most complex tasks. Haiku serves high-volume formulaic work. Extended thinking adds latency and is not needed for simple questions — so the documented escalation path is <em>start on Sonnet with thinking off, then raise the model or enable thinking if you need more support.</em></p>
+    <p style="margin-bottom:0">This is a real nuance against the tidy "match the tier to the task" rule. There <em>is</em> an official default, and it is Sonnet. For a mixed workload, routing still applies — cheap tier for the routine majority, capable tier for the flagged minority — but "always use the best" and "default to the middle without thinking" remain wrong for different reasons: the first wastes budget, the second skips the judgement.</p>
+  </div>
+</section>
+
+<section>
+  <p class="kicker">Configuration</p>
+  <h2>What goes where</h2>
+  <div class="tw"><table>
+    <thead><tr><th>Ask</th><th>Then</th></tr></thead>
+    <tbody>
+      <tr><td>What scope?</td><td>Everywhere in your work → account level. Every conversation in one workstream → Project instructions. Just this once → the prompt.</td></tr>
+      <tr><td>Durable or per-instance?</td><td>Templates, standing definitions, tone and format rules → configuration. This month's figures, today's question, this cycle's recipient → supplied each time.</td></tr>
+    </tbody>
+  </table></div>
+  <p style="font-size:.94rem;color:var(--ink-mid);margin:.9rem 0 .9rem">Behavioural rules go in <strong>instructions</strong>; source documents go in <strong>knowledge</strong>. Project configuration belongs to the Project, not the user, so a new joiner needs no personal setup. Drift in a shared Project is fixed by <strong>ownership plus a change process</strong>, not by locking editing down.</p>
+  <div class="tw"><table>
+    <thead><tr><th>Permission · Team and Enterprise</th><th>What it allows</th></tr></thead>
+    <tbody>
+      <tr><td>Can view</td><td>Read the project, use its knowledge, hold conversations — but change nothing</td></tr>
+      <tr><td>Can edit</td><td>Change the instructions, replace knowledge, manage who else is in</td></tr>
+      <tr><td>Owner</td><td>All of the above, plus who can see the project at all and whether the wider organisation can</td></tr>
+    </tbody>
+  </table></div>
+  <p style="font-size:.94rem;color:var(--ink-mid);margin:.9rem 0 0">Three levels, not two — <strong>Owner</strong> is a distinct level, and an earlier version of this guide listed only the first two. Projects also scale automatically: as the knowledge base approaches the context limit, Claude stops loading everything and starts searching the files for what is relevant instead — the course puts the resulting gain in capacity at up to an order of magnitude. You get a visual indicator; the experience is otherwise unchanged.</p>
+</section>
+
+<section>
+  <p class="kicker">Governance</p>
+  <h2>What the control attaches to</h2>
+  <p class="lede">The subtlest family on the exam. Redaction is sometimes the answer and sometimes the trap, and which one depends entirely on what the rule attaches to.</p>
+  <div class="tw"><table>
+    <thead><tr><th>Trigger</th><th>Response</th></tr></thead>
+    <tbody>
+      <tr><td>Personal or regulated identifiers</td><td>De-identify before providing</td></tr>
+      <tr><td>A prohibited document class</td><td>Redaction does <em>not</em> cure it. A redacted customer contract is still a customer contract</td></tr>
+      <tr><td>Contractual restriction, no personal data</td><td>Check the agreement and get approval. Sensitivity is not only about personal data</td></tr>
+      <tr><td>Use beyond the collection purpose</td><td>Purpose limitation applies; needs review</td></tr>
+      <tr><td>Legal or regulatory liability</td><td>Escalate to the owners. Do not draft first</td></tr>
+    </tbody>
+  </table></div>
+  <p style="font-size:.94rem;color:var(--ink-mid);margin:.9rem 0 1.4rem">Policy is not outcome-dependent — a skipped review is a violation even when nothing went wrong. Scope calibrates the <em>depth</em> of review, never whether it applies. Work material on a personal account sits outside the organisation's controls whoever pays for it. Improperly obtained input stays improper. Judgement stays human: Claude words an assessment, the manager forms it.</p>
+
+  <div class="callout">
+    <p class="kicker">When the tool is the wrong tool · from the Cowork course</p>
+    <p>A rare thing in vendor material — an explicit list of when not to use the product. Three cases:</p>
+    <ul class="plain" style="margin:.7rem 0">
+      <li><strong>Regulated workflows needing an audit trail.</strong> Cowork activity does not appear in audit logs or data exports.</li>
+      <li><strong>Anything you would not hand to a capable colleague and then walk away from.</strong> Signing off the contract, publishing the announcement, releasing the change customers will see. <strong>Claude prepares; you are the one who ships.</strong></li>
+      <li><strong>Highly sensitive personal data</strong>, anywhere beyond the perimeter your IT function has signed off on.</li>
+    </ul>
+    <p style="margin-bottom:0">That middle test is the most portable heuristic in any of the four courses, and it generalises well beyond Cowork. If you would not hand it to a capable new colleague and walk away, it needs a human checkpoint — and the dividing line is preparation versus shipping.</p>
+  </div>
+
+  <div class="callout warn">
+    <p class="kicker">Why controls actually fail</p>
+    <p><strong>Most mistakes are not safeguards failing. They are someone clicking through a confirmation that did not quite say what they thought it said.</strong></p>
+    <p style="margin-bottom:0">The practical moves follow from that. Point Claude at a dedicated working folder rather than a catch-all, because the folder is the boundary. Back up anything irreplaceable outside it first. Test new workflows on copies. Name destructive verbs precisely, since "cut the section" and "update the file" each carry an irrecoverable reading. State the bounds in the prompt. Have scheduled tasks draft for review before they act on your behalf. Then three checks while it runs: read the plan Claude sets out, watch for the scope widening, and actually read confirmations instead of clicking past them. The course is worth quoting on the last of these in spirit if not in letter — a vague sense that something is wrong is data, not noise.</p>
+  </div>
+</section>
+
+<section>
+  <p class="kicker">Evaluation</p>
+  <h2>Naming the failure</h2>
+  <div class="tw"><table>
+    <thead><tr><th>Type</th><th>Tell</th></tr></thead>
+    <tbody>
+      <tr><td>Hallucination</td><td>Something asserted is false. A plausible specific that does not exist</td></tr>
+      <tr><td>Bias</td><td>A systematic skew the source did not support. Nothing false — the weighting was imported</td></tr>
+      <tr><td>Incompleteness</td><td>Something is missing and nothing signals it. The dangerous one</td></tr>
+      <tr><td>Inconsistency</td><td>Different answers to the same question. Expected, not a fault to report</td></tr>
+      <tr><td>Sycophancy</td><td>Agrees with you, validates your premise, or softens a finding because the conversation invited it. Feels like agreement, not error</td></tr>
+      <tr><td>Silent truncation</td><td>Context exceeded the window and was cut with no warning. A cliff, not a gradient — the output looks complete</td></tr>
+      <tr><td>Letter-over-spirit</td><td>The instruction was honoured and the intent was not. Restate the goal; repeating the instruction harder will not close the gap</td></tr>
+      <tr><td>Verbosity</td><td>Length by default, beyond what the task needs. A fine-tuning fingerprint, not a prompt failure</td></tr>
+      <tr><td>Over-caution</td><td>Hedging that is reflexive rather than proportionate to the actual risk</td></tr>
+    </tbody>
+  </table></div>
+  <p style="font-size:.94rem;color:var(--ink-mid);margin:.9rem 0 0">One fabricated citation implicates the document — check the others. <strong>Never accept self-assessment:</strong> asking how confident it is, asking it to check its own accuracy, or regenerating to see whether the figure recurs are all non-verification. Human review is required for external publication under the organisation's name, legal or financial or regulatory consequence, material effect on an individual, or a reader who cannot judge accuracy themselves. A better model never substitutes for a review control.</p>
+</section>
+
+<section>
+  <p class="kicker">Troubleshooting</p>
+  <h2>Diagnostic order</h2>
+  <p class="lede">Work down. The answer is almost always above the tier.</p>
+  <ol class="steps">
+    <li>Is a requirement vague, buried, or unmeasurable? Make it explicit and structured.</li>
+    <li>Do two instruction layers conflict — prompt against Project? Reconcile them rather than re-prompting around it.</li>
+    <li>Has the configuration changed — edited instructions, a superseded source, a connector failing quietly?</li>
+    <li>Is a long conversation crowding out the constraints? Carry forward what still stands and start fresh.</li>
+    <li>Does it fail <em>only</em> on harder cases, after real refinement? Now consider the tier.</li>
+    <li>Is it outside your scope? Escalate.</li>
+  </ol>
+  <p style="font-size:.94rem;color:var(--ink-mid);margin:1.1rem 0 0">Optimise by removing work, not speeding it up. If a step is duplicated, eliminate it — put the template in the configuration so output arrives already conforming. And when carrying context forward, take only the conclusions that still stand: summarising the <em>whole</em> conversation preserves the abandoned half too.</p>
+</section>
+
+<section>
+  <p class="kicker">In the room</p>
+  <h2>Mechanics</h2>
+  <ul class="plain">
+    <li><strong>2:00 per item.</strong> At sixty minutes you should be at or past item 30.</li>
+    <li><strong>Read the stated count on every multi-response item, then count your letters before moving on.</strong> Partial selections score zero — the same as wrong. This is the most common way well-prepared candidates lose marks.</li>
+    <li><strong>Never leave a blank.</strong> There is no penalty for a wrong answer.</li>
+    <li><strong>Read the qualifier</strong> — FIRST, most appropriate, most important, independently. Several options can be true at once.</li>
+    <li><strong>Two options both look right?</strong> Take the one that adds a control or fixes a structure over the one that improves a prompt or changes the model.</li>
+    <li><strong>An option says escalate?</strong> Outside your scope or authority, probably right. Merely unfamiliar, probably not.</li>
+    <li><strong>Over 2:30 on an item?</strong> Best guess, flag it, move on.</li>
+  </ul>
+</section>
+
+<section>
+  <p class="kicker">Honesty</p>
+  <h2>What this guide cannot tell you</h2>
+  <p>No exam content appears here, and none should appear in any guide you trust. Candidates agree to keep item content confidential, so anything presenting itself as "real exam questions" or a "dump" is either fabricated or a breach — and using it puts your credential at risk. Every practice item above was written from the published objectives.</p>
+  <p>Two further limits worth stating plainly. The 4D sub-components come from the public course outline; the lesson bodies sit behind enrolment, so the one-line definitions here are official but the elaborations are the author's reading of them. And the objective-level intelligence rests on <em>one</em> report, where most objectives carried only about two items — the gaps identified here are worth acting on because there is an identifiable mechanism behind each one, not because a single weak objective is statistically damning.</p>
+  <p style="margin-bottom:0">Product details move. Model names, tier positioning, feature availability and interface specifics all change between exam versions. The judgement patterns in this guide are stable; anything naming a specific product behaviour should be checked against current Anthropic documentation before you rely on it.</p>
+</section>
+
+<h2 style="margin-top:2.4rem">Sources</h2>
+<p style="font-size:.94rem">Everything on this page traces to one of these. They are free, and this guide is a map of them rather than a replacement:</p>
+<ul class="plain" style="font-size:.94rem">
+  <li>The published <strong>CCAO-F Exam Guide</strong> (v1.0, July 2026) — domains, weights, objectives</li>
+  <li><a href="https://academy.claude.com/courses/ai-fluency-framework-foundations">AI Fluency: Framework &amp; Foundations</a> — the 4Ds and their twelve sub-components, the loop, the engagement modes</li>
+  <li><a href="https://academy.claude.com/courses/claude-101">Claude 101</a> — Projects, artifacts, the three-part prompt framework, the six techniques</li>
+  <li><a href="https://academy.claude.com/courses/ai-capabilities-and-limitations">AI Capabilities and Limitations</a> — the four properties, the fine-tuning fingerprints, calibrated trust</li>
+  <li><a href="https://academy.claude.com/courses/introduction-to-claude-cowork">Introduction to Claude Cowork</a> — standing context, the four building blocks, the safety practice</li>
+  <li><a href="https://academy.claude.com/tutorials">Academy tutorials</a> — the research-backed curriculum, the Chat-versus-Cowork table, the model-selection tutorial</li>
+</ul>
+<p class="foot">Compiled by Chit Boon Lee and Claude · Chit Boon Lee is CCAO-F certified.<br>Unofficial. Not affiliated with, endorsed by, or sponsored by Anthropic. Built from the published CCAO-F exam guide, one candidate's objective-level breakdown, and the lesson material of four Claude Academy courses. Anthropic's material is restated here in the author's own words and remains Anthropic's; no exam content appears anywhere in it.</p>
+
+</div>
