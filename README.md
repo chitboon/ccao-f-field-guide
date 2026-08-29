@@ -7,6 +7,8 @@
 
 An unofficial study guide for the **Claude Certified Associate – Foundations** (CCAO-F) exam by Anthropic.
 
+Also available: **[CCAR-F Field Guide](https://github.com/chitboon/ccar-f-field-guide)** (Architect – Foundations — 210 practice items, 14 trap patterns)
+
 **[Read the interactive guide →](https://chitboon.github.io/ccao-f-field-guide/guide/)**
 
 106 practice items · 4D Framework · 4 Properties of AI · trap patterns · cheatsheet · lesson plan
