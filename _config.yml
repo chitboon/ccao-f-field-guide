@@ -21,3 +21,4 @@ defaults:
       path: ""
     values:
       layout: default
+      image: /assets/og-image.png
