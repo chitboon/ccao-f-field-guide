@@ -1,0 +1,22 @@
+title: CCAO-F Field Guide
+description: >-
+  Unofficial study guide for the Claude Certified Associate – Foundations
+  (CCAO-F) exam by Anthropic. The 4D Framework, 4 Properties of AI,
+  106 practice items, sealed mock exam, trap patterns, and cheatsheet.
+url: https://chitboon.github.io
+baseurl: /ccao-f-field-guide
+
+author: Chit Boon Lee
+twitter:
+  username: ""
+  card: summary_large_image
+logo: ""
+
+plugins:
+  - jekyll-seo-tag
+
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: default
